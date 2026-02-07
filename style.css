@@ -4,16 +4,16 @@ body {
     align-items: center; 
     height: 100vh; 
     margin: 0;
-    overflow: hidden; /* Prevents scrollbars when button moves */
+    overflow: hidden; 
     text-align: center; 
     font-family: sans-serif; 
     background-color: #ffebee; 
 }
 
-/* IMPORTANT: This allows the button to move */
+/* This allows the No button to jump around */
 #noBtn { 
     position: absolute; 
-    transition: 0.1s; /* Makes the movement snap quickly */
+    transition: 0.1s;
 }
 
 button { 
@@ -27,7 +27,7 @@ button {
 
 #yesBtn { background-color: #ff4081; color: white; }
 
-/* Heart Animation */
+/* Hearts hidden in the background */
 .heart {
     position: fixed;
     font-size: 2rem;
