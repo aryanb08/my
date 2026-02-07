@@ -2,3 +2,18 @@ body { display: flex; justify-content: center; align-items: center; height: 100v
 #noBtn { position: absolute; }
 button { padding: 10px 20px; font-size: 1.2rem; cursor: pointer; border-radius: 10px; border: none; margin: 10px; }
 #yesBtn { background-color: #ff4081; color: white; }
+/* Styling for the floating hearts */
+.heart {
+    position: fixed;
+    font-size: 2rem;
+    top: -10vh;
+    user-select: none;
+    z-index: -1; /* Keeps them in the background */
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
