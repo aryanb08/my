@@ -1,0 +1,4 @@
+body { display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center; font-family: sans-serif; background-color: #ffebee; }
+#noBtn { position: absolute; }
+button { padding: 10px 20px; font-size: 1.2rem; cursor: pointer; border-radius: 10px; border: none; margin: 10px; }
+#yesBtn { background-color: #ff4081; color: white; }
