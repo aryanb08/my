@@ -1,29 +1,36 @@
-function celebrate() {
-    // Hide the question and buttons
-    document.getElementById('question').style.display = 'none';
-    document.querySelector('.buttons').style.display = 'none';
-    
-    // Show the celebration message
-    document.getElementById('celebration').style.display = 'block';
+const noBtn = document.getElementById('noBtn');
 
-    // Start the heart shower
+// This makes the "No" button move
+noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
+
+function celebrate() {
+    // Hide the main content
+    document.getElementById('main-content').style.display = 'none';
+    
+    // Show the celebration section
+    const celebration = document.getElementById('celebration');
+    celebration.style.display = 'block';
+
+    // Start the hearts
     setInterval(createHeart, 300);
 }
 
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = '❤️'; // You can change this to 💖 or 💕
+    heart.innerHTML = '❤️'; 
     
-    // Randomize position and speed
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = Math.random() * 2 + 3 + "s";
     
     document.body.appendChild(heart);
 
-    // Remove heart after it falls to keep the page fast
     setTimeout(() => {
         heart.remove();
     }, 5000);
 }
-
