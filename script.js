@@ -1,6 +1,6 @@
 const noBtn = document.getElementById('noBtn');
 
-// This makes the "No" button move
+// The runaway button logic
 noBtn.addEventListener('mouseover', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -8,15 +8,20 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.style.top = `${y}px`;
 });
 
-function celebrate() {
-    // Hide the main content
-    document.getElementById('main-content').style.display = 'none';
-    
-    // Show the celebration section
-    const celebration = document.getElementById('celebration');
-    celebration.style.display = 'block';
+// Also make it move for touch (mobile users)
+noBtn.addEventListener('touchstart', () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+});
 
-    // Start the hearts
+function celebrate() {
+    // Switch the screens
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('celebration').style.display = 'block';
+
+    // Start scattering the hearts
     setInterval(createHeart, 300);
 }
 
